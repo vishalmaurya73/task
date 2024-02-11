@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderLust</title>
+
+    <style>
+        .index{
+            height: 50rem;
+            width: 50%;
+            border: 2px solid #4567;
+            margin:3rem auto auto 10rem;
+            padding-left: 4rem;
+            padding-right: 2rem;
+            border-bottom: none;
+            
+        }
+
+        .index button{
+            height: 2rem;
+            width: 15rem;
+            font-size: 1em;
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+            margin-left: 25%;
+            background-color: green;
+            color: beige;
+        }
+
+        .index h3{
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+
+        .inputclass{
+            height: 2rem;
+            width: 15rem;
+            text-align: center;
+           margin-left: 25%;
+           font-size: 1rem;
+          
+        }
+
+        .textareaclass{
+            height: 8rem;
+            width: 15rem;
+            text-align: center;
+           margin-left: 25%;
+           font-size: 1rem; 
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="index">
+    <h3>Edit your listings</h3>
+    <hr>
+
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+       
+      <input class="inputclass" name="listing[title]" value="<%= listing.title %>" type="text">
+        <br><br>
+        <textarea class="textareaclass" name="listing[description]"><%= listing.description %></textarea>
+        <br><br>
+        <input class="inputclass" name="listing[image]" value="<%= listing.image %>" type="text">
+        <br> <br>
+        <input class="inputclass" name="listing[price]" value="<%= listing.price %>"type="number">
+        <br> <br>
+        <input class="inputclass" name="listing[country]" value="<%= listing.country %>" type="text">
+        <br> <br>
+        <input class="inputclass" name="listing[location]" value="<%= listing.location %>" type="text">
+        <br> <br>
+        <button>Update</button>
+      
+
+
+    </form>
+    </div>
+</body>
+</html>

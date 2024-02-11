@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderLust</title>
+
+    <style>
+        .index{
+            height: 50rem;
+            width: 50%;
+            border: 2px solid #4567;
+            margin:3rem auto auto 10rem;
+            padding-left: 4rem;
+            padding-right: 2rem;
+            border-bottom: none;
+            
+        }
+
+    .index button{
+            height: 2rem;
+            width: 10rem;
+            font-size: 1em;
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+            margin-left: 25%;
+            background-color: green;
+            color: beige;
+            margin-top: 1rem;
+           
+        }
+
+        .index h3{
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .index a{
+           
+            padding: 0.7rem;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="index">
+    <h3>Listings Details</h3>
+    <hr>
+    <ul>
+        <li><%=listing.title %></li>
+        <li><%=listing.description %></li>
+        <li> &#8377; <%=listing.price.toLocaleString("en-IN") %></li>
+        <li><%=listing.location %></li>
+        <li><%=listing.country %></li>
+    </ul>
+    <hr>
+
+  <button> <a href="/listings/<%= listing._id %>/edit">Edit this Listings</a><br><br></button> 
+
+    <form method="POST" action="/listings/<%=listing._id %>?_method=DELETE">
+        <button>Delete this listings</button>
+    </form>
+</div>
+</body>
+</html>
